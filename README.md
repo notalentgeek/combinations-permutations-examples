@@ -84,6 +84,11 @@ The code is structured as follows
 
 The program prints the generated combinations and permutations as well as their sizes to the console. The output demonstrates the combinations of selected values and permutations for each category.
 
+## To-Do
+
+- **[DONE]** Add a to-do list section to the `README.md`.
+- Provide an example on how to turn a basic for-loop into a recursive function.
+
 ## Contributing
 
 Contributions are welcome! Feel free to submit issues or pull requests for improvements or enhancements.
