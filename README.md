@@ -86,8 +86,10 @@ The program prints the generated combinations and permutations as well as their 
 
 ## To-Do
 
-- **[DONE]** Add a to-do list section to the `README.md`.
-- Provide an example on how to turn a basic for-loop into a recursive function.
+- **[DONE]** Add a to-do list section to the `README.md`
+- Provide an example of how to convert a basic for-loop into a recursive function
+- Add unit tests for functions that do not yet have tests
+- Repeat this exercise a few more times to perform the permutation function instinctively
 
 ## Contributing
 
