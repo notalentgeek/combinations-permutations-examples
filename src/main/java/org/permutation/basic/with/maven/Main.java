@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         // Initialize Variables With Different Sets
-        int valuesPerVariable = 2;
+        int valuesPerVariable = 5;
         String[] colors = {"Blue", "Green", "Ivory", "Red", "Yellow"};
         String[] fewColors = Arrays.copyOfRange(colors, 0, valuesPerVariable);
         String[] drinks = {"Coffee", "Milk", "Orange Juice", "Tea", "Generic Drink 1"};
@@ -21,13 +21,13 @@ public class Main {
         String[][] variablesBigSet = {colors, drinks, hobbies, nationalities, pets};
         String[][] variablesSmallSet = {fewColors, fewDrinks, fewHobbies, fewNationalities, fewPets};
 
-        // Generate Combinations
-        ArrayList<ArrayList<String>> combinations = new ArrayList<>();
-        generateCombinations(variablesSmallSet, new ArrayList<>(), combinations, 0);
-
-        // Print Generated Combinations and Their Size
-        System.out.println(combinations);
-        System.out.println(combinations.size());
+//        // Generate Combinations
+//        ArrayList<ArrayList<String>> combinations = new ArrayList<>();
+//        generateCombinations(variablesSmallSet, new ArrayList<>(), combinations, 0);
+//
+//        // Print Generated Combinations and Their Size
+//        System.out.println(combinations);
+//        System.out.println(combinations.size());
 
         // Generate Permutations for Few Colors, Drinks, and Hobbies
         ArrayList<ArrayList<String>> permutedFewColors = new ArrayList<>();
@@ -65,7 +65,7 @@ public class Main {
         System.out.println(permutations);
         System.out.println(permutations.size());
 
-        // Generate and Print Combined Permutations Example With Hard Coded Function
+        /*// Generate and Print Combined Permutations Example With Hard Coded Function
         ArrayList<ArrayList<ArrayList<String>>> combinationsPermutationsHardCoded = generateHardCodedCombinationsPermutations(
             valuesPerVariable,
             permutedFewColors,
@@ -77,15 +77,15 @@ public class Main {
 
         // Print Combined Permutations and Their Size
         System.out.println(combinationsPermutationsHardCoded);
-        System.out.println(combinationsPermutationsHardCoded.size());
+        System.out.println(combinationsPermutationsHardCoded.size());*/
 
         // Generate and Print Combined Permutations Example With More Granular Function
         ArrayList<ArrayList<ArrayList<String>>> combinationsPermutations = new ArrayList<>();
         generateCombinationsPermutations(
-            permutations,
-            combinationsPermutations,
-            new ArrayList<>(),
-            0
+                permutations,
+                combinationsPermutations,
+                new ArrayList<>(),
+                0
         );
 
         // Print Combined Permutations and Their Size
@@ -101,10 +101,9 @@ public class Main {
     ) {
         if (depth == variables.size()) {
             ArrayList<ArrayList<String>> currentCopy = new ArrayList<>(current);
-
             ArrayList<ArrayList<String>> complex = new ArrayList<>();
-            for (int pairsIndex = 0; pairsIndex < currentCopy.size(); pairsIndex ++) {
-                for (int pairIndex = 0; pairIndex < currentCopy.get(pairsIndex).size(); pairIndex ++) {
+            for (int pairsIndex = 0; pairsIndex < currentCopy.size(); pairsIndex++) {
+                for (int pairIndex = 0; pairIndex < currentCopy.get(pairsIndex).size(); pairIndex++) {
                     if (pairsIndex == 0) {
                         ArrayList<String> set = new ArrayList<>();
                         set.add(currentCopy.get(pairsIndex).get(pairIndex));
@@ -121,10 +120,10 @@ public class Main {
                 current.add(variables.get(depth).get(i));
 
                 generateCombinationsPermutations(
-                    variables,
-                    results,
-                    current,
-                    depth + 1
+                        variables,
+                        results,
+                        current,
+                        depth + 1
                 );
                 current.removeLast();
             }
